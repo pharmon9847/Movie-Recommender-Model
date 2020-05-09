@@ -1,0 +1,40 @@
+body {
+	background-color: white;
+    background: url("/static/images/app-bg.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.container
+{
+	padding-top: 120px;
+	padding-bottom: 20px;
+	width: auto;
+	margin:0 auto;
+}
+
+h5 {
+	padding-top: 50px;
+	padding-bottom:30px;
+	text-align:center;
+}
+
+.form-row {
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-bottom: 15px;
+}
+
+.footer {
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 10px; 
+}
+
+.container-result {
+	padding-top: 20px;
+	padding-bottom: 20px; 
+	height: 200px;
+}

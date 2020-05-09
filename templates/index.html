@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+      initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie Recommendations</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "css/style.css" %}" type="text/css"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon">
+      </span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li> <a class="nav-item nav-link active" href="index.html">Home
+              <span class="sr-only">(current)</span></a> 
+          </li>
+          <li class="nav-item"> <a class="nav-link" href="title_search">Title Search</a>
+          <li class="nav-item"> <a class="nav-link" href="keyword_search.html">Keyword Search</a>
+          <!-- <li class="nav-item"> <a class="nav-link" href="#">Browse</a>
+          </li> -->
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="card text-center">
+
+        <!-- <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Title Search</a>
+            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Keyword Search</a>
+            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+          </div>
+        </nav> -->
+        <!-- <div class="tab-content" id="nav-tabContent"> -->
+          <!-- <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"> -->
+            <form action='' method='POST'>
+              <div class="form-row">
+                {% csrf_token %}
+                {{ form }}
+                <input class="btn btn-success btn-block" type="submit">
+              </div>
+            </form>
+
+            <!-- <div class='form-row'>
+                <div class='form-group col-md-4'>
+                    <input class='form-control' type='text' name='movie_1' placeholder='Enter title of movie one' />
+                </div>
+                <div class='form-group col-md-4'>
+                    <input class='form-control' type='text' name='movie_1' placeholder='Enter title of movie two' />
+                </div>
+                <div class='form-group col-md-4'>
+                    <input class='form-control' type='text' name='movie_1' placeholder='Enter title of movie three' />
+                </div>
+            </div> -->
+
+            <!-- <h5 class="card-title text-center">Enter Three Movies</h5>
+                <div class="form-row">
+                <div class="form-group col-md-4">
+                <input class="form-control" placeholder="Movie Title 1"type="text"> 
+                </div>
+                <div class="form-group col-md-4">
+                <input class="form-control" placeholder="Movie Title 2" type="text">
+                </div>
+                <div class="form-group col-md-4">
+                <input class="form-control" placeholder="Movie Title 3" type="text">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6"> <button type="submit" class="btn btn-success btn-block">Recommend</button></div>
+                <div class="form-group col-md-6"> <button type="submit" class="btn btn-danger btn-block">Reset</button></div>
+            </div> -->
+        <!-- </div> -->
+          <!-- <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"> -->
+            <!-- <h5 class="card-title text-center">Enter Movie Keyword</h5>
+            <div class="form-row">  
+            <div class="form-group col-md-12">
+              <input class="form-control" placeholder="Search by Keyword" type="text"> 
+            </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6"> <button type="submit" class="btn btn-success btn-block">Recommend</button></div>
+              <div class="form-group col-md-6"> <button type="submit" class="btn btn-danger btn-block">Reset</button></div>
+            </div> -->
+
+          <!-- </div> -->
+          <!-- <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div> -->
+        <!-- </div> -->
+
+
+
+
+
+        <!-- <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs pull-right" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="title-tab" data-toggle="tab" href="#title-search" role="tab" aria-controls="title" aria-selected="true">Title Search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="keyword-tab" data-toggle="tab" href="#keyword-search" role="tab" aria-controls="keyword" aria-selected="true">Keyword Search</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+              <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">dfgsdfgdfg</div>
+              <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+          </div>
+      </div> -->
+
+ 
+      </div>
+    </div>
+
+    <div class="container-result">
+      <!-- <div class="card"></div> --> 
+    </div>
+    
+      <!-- Footer -->
+        <!-- Copyright -->
+      <div class="footer" style="top: 800px; left: 550px; width: 514px;
+        height: 10px;">
+        <p class="text text-center">© 2020 Copyright</p>
+      </div>
+      <!-- Copyright -->
+      <!-- Footer -->
+  </body>
+</html>
